@@ -1,0 +1,26 @@
+{
+  "name": "pcat",
+  "version": "1.0.0",
+  "description": "Pcat Photo app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hberkayaktas/PCAT.git"
+  },
+  "keywords": [
+    "photo",
+    "app"
+  ],
+  "author": "berkay aktaş",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hberkayaktas/PCAT/issues"
+  },
+  "homepage": "https://github.com/hberkayaktas/PCAT#readme",
+  "devDependencies": {
+    "prettier": "2.6.2"
+  }
+}
