@@ -8,6 +8,8 @@ app.set('view engine', 'ejs');
 
 // middle wares
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 //routes
 app.get('/', (req, res) => {
@@ -18,6 +20,10 @@ app.get('/about', (req, res) => {
 });
 app.get('/add', (req, res) => {
   res.render('add');
+});
+app.post('/photos', (req, res) => {
+  console.log(req.body);
+  res.redirect('/');
 });
 
 const port = 3000;
