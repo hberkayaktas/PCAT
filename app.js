@@ -5,13 +5,19 @@ const fileUpload = require('express-fileupload');
 const methodOverride = require('method-override');
 const photoController = require('./controllers/photoControllers');
 const pageController = require('./controllers/pageControllers');
+const connectstring = require('./connectstring');
 
 const app = express();
 
+//mongodb://localhost/pcat-test-db
 //database bağlantısı
-mongoose.connect('mongodb://localhost/pcat-test-db', {
+mongoose.connect(connectstring.CDBString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+}).then(()=>{
+  console.log('DB connect!');
+}).catch((err)=>{
+  console.log(err);
 });
 //kendi kendine veri tabanı yoksa oluşturur senle alakası olmaz
 
@@ -44,7 +50,7 @@ app.get('/add',pageController.getAddPage);
 
 
 
-const port = 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Sunucu ${port} portunda başlatıldı..`);
 });
